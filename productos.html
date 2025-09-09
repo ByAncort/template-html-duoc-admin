@@ -15,8 +15,8 @@
         </div>
       <nav class="sidebar-menu">
             <ul>
-                <li><a href="./dashboard.html" class="active"><i class="fas fa-home"></i> <span class="menu-text">Dashboard</span></a></li>
-                <li><a href="./productos.html"><i class="fas fa-shopping-bag"></i> <span class="menu-text" >Productos</span></a></li>
+                <li><a href="./dashboard.html"><i class="fas fa-home"></i> <span class="menu-text">Dashboard</span></a></li>
+                <li><a href="./productos.html" class="active"><i class="fas fa-shopping-bag"></i> <span class="menu-text" >Productos</span></a></li>
                 <li><a href="./categorias.html"><i class="fas fa-list-alt"></i> <span class="menu-text">Categorías</span></a></li>
                 <li><a href="./pedidos.html"><i class="fas fa-shopping-cart"></i> <span class="menu-text">Pedidos</span></a></li>
                 <li><a href="./clientes.html"><i class="fas fa-users"></i> <span class="menu-text">Clientes</span></a></li>
@@ -240,32 +240,6 @@
         </div>
     </main>
 
-    <script>
-        // Funcionalidad básica para la página
-        document.addEventListener('DOMContentLoaded', function() {
-            // Botón de nuevo producto
-            document.querySelector('.btn-primary').addEventListener('click', function() {
-                alert('Funcionalidad de nuevo producto');
-            });
-            
-            // Botones de editar
-            document.querySelectorAll('.edit-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const productName = this.closest('tr').querySelector('.product-info h4').textContent;
-                    alert(`Editar producto: ${productName}`);
-                });
-            });
-            
-            // Botones de eliminar
-            document.querySelectorAll('.delete-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
-                    const productName = this.closest('tr').querySelector('.product-info h4').textContent;
-                    if(confirm(`¿Estás seguro de que quieres eliminar ${productName}?`)) {
-                        alert(`Producto ${productName} eliminado`);
-                    }
-                });
-            });
-        });
-    </script>
+    <script src="./js/productos.js"></script>
 </body>
 </html>
