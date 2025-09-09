@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Clientes - Admin Moda</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="./estilos/cliente.css">
+</head>
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-header">
+            <h2><i class="fas fa-tshirt"></i> <span>Moda Admin</span></h2>
+        </div>
+        <nav class="sidebar-menu">
+            <ul>
+                <li><a href="./dashboard.html" class="active"><i class="fas fa-home"></i> <span class="menu-text">Dashboard</span></a></li>
+                <li><a href="./productos.html"><i class="fas fa-shopping-bag"></i> <span class="menu-text" >Productos</span></a></li>
+                <li><a href="./categorias.html"><i class="fas fa-list-alt"></i> <span class="menu-text">Categorías</span></a></li>
+                <li><a href="./pedidos.html"><i class="fas fa-shopping-cart"></i> <span class="menu-text">Pedidos</span></a></li>
+                <li><a href="./clientes.html"><i class="fas fa-users"></i> <span class="menu-text">Clientes</span></a></li>
+                <li><a href="https://app.powerbi.com/singleSignOn?ru=https%3A%2F%2Fapp.powerbi.com%2F%3FnoSignUpCheck%3D1"><i class="fas fa-chart-bar"></i> <span class="menu-text">Reportes</span></a></li>
+                <li><a href="./configuracion.html"><i class="fas fa-cog"></i> <span class="menu-text">Configuración</span></a></li>
+            </ul>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Header -->
+        <div class="header">
+            <div class="header-title">
+                <h1>Gestión de Clientes</h1>
+                <p>Administra la información de tus clientes</p>
+            </div>
+            <div class="user-menu">
+                <div class="user-info">
+                    <h4>Ana García</h4>
+                    <p>Administrador</p>
+                </div>
+                <div class="user-avatar">AG</div>
+            </div>
+        </div>
+
+        <!-- Stats Cards -->
+        <div class="stats-cards">
+            <div class="stat-card stat-total">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>1,258</h3>
+                    <p>Clientes Totales</p>
+                </div>
+            </div>
+            
+            <div class="stat-card stat-active">
+                <div class="stat-icon">
+                    <i class="fas fa-user-check"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>1,042</h3>
+                    <p>Clientes Activos</p>
+                </div>
+            </div>
+            
+            <div class="stat-card stat-new">
+                <div class="stat-icon">
+                    <i class="fas fa-user-plus"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>42</h3>
+                    <p>Nuevos este mes</p>
+                </div>
+            </div>
+            
+            <div class="stat-card stat-revenue">
+                <div class="stat-icon">
+                    <i class="fas fa-euro-sign"></i>
+                </div>
+                <div class="stat-info">
+                    <h3>€24,580</h3>
+                    <p>Ingresos por clientes</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Page Actions -->
+        <div class="page-actions">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Buscar clientes...">
+            </div>
+            <div class="filters">
+                <select class="filter-select">
+                    <option>Todos los clientes</option>
+                    <option>Clientes activos</option>
+                    <option>Clientes inactivos</option>
+                    <option>Clientes nuevos</option>
+                </select>
+                <select class="filter-select">
+                    <option>Ordenar por: Más reciente</option>
+                    <option>Ordenar por: Nombre A-Z</option>
+                    <option>Ordenar por: Mayor gasto</option>
+                </select>
+            </div>
+        </div>
+
+        <!-- Customers Table -->
+        <div class="customers-table-container">
+            <div class="table-header">
+                <h3>Todos los Clientes</h3>
+            </div>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Cliente</th>
+                        <th>Email</th>
+                        <th>Teléfono</th>
+                        <th>Pedidos</th>
+                        <th>Gasto Total</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <div class="customer-cell">
+                                <div class="customer-avatar">ML</div>
+                                <div class="customer-info">
+                                    <h4>María López</h4>
+                                    <p>#CLI-001</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>maria.lopez@example.com</td>
+                        <td>+34 612 345 678</td>
+                        <td>12</td>
+                        <td>€1,245.99</td>
+                        <td><span class="status status-active">Activo</span></td>
+                        <td>
+                            <div class="actions">
+                                <button class="action-btn view-btn" data-customer="001"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn edit-btn" data-customer="001"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn delete-btn" data-customer="001"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-cell">
+                                <div class="customer-avatar">CR</div>
+                                <div class="customer-info">
+                                    <h4>Carlos Ruiz</h4>
+                                    <p>#CLI-002</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>carlos.ruiz@example.com</td>
+                        <td>+34 623 456 789</td>
+                        <td>8</td>
+                        <td>€856.50</td>
+                        <td><span class="status status-active">Activo</span></td>
+                        <td>
+                            <div class="actions">
+                                <button class="action-btn view-btn" data-customer="002"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn edit-btn" data-customer="002"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn delete-btn" data-customer="002"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-cell">
+                                <div class="customer-avatar">ET</div>
+                                <div class="customer-info">
+                                    <h4>Elena Torres</h4>
+                                    <p>#CLI-003</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>elena.torres@example.com</td>
+                        <td>+34 634 567 890</td>
+                        <td>5</td>
+                        <td>€420.00</td>
+                        <td><span class="status status-active">Activo</span></td>
+                        <td>
+                            <div class="actions">
+                                <button class="action-btn view-btn" data-customer="003"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn edit-btn" data-customer="003"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn delete-btn" data-customer="003"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-cell">
+                                <div class="customer-avatar">JM</div>
+                                <div class="customer-info">
+                                    <h4>Javier Méndez</h4>
+                                    <p>#CLI-004</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>javier.mendez@example.com</td>
+                        <td>+34 645 678 901</td>
+                        <td>3</td>
+                        <td>€156.75</td>
+                        <td><span class="status status-inactive">Inactivo</span></td>
+                        <td>
+                            <div class="actions">
+                                <button class="action-btn view-btn" data-customer="004"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn edit-btn" data-customer="004"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn delete-btn" data-customer="004"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="customer-cell">
+                                <div class="customer-avatar">SG</div>
+                                <div class="customer-info">
+                                    <h4>Sofía García</h4>
+                                    <p>#CLI-005</p>
+                                </div>
+                            </div>
+                        </td>
+                        <td>sofia.garcia@example.com</td>
+                        <td>+34 656 789 012</td>
+                        <td>7</td>
+                        <td>€978.30</td>
+                        <td><span class="status status-active">Activo</span></td>
+                        <td>
+                            <div class="actions">
+                                <button class="action-btn view-btn" data-customer="005"><i class="fas fa-eye"></i></button>
+                                <button class="action-btn edit-btn" data-customer="005"><i class="fas fa-edit"></i></button>
+                                <button class="action-btn delete-btn" data-customer="005"><i class="fas fa-trash"></i></button>
+                            </div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="pagination">
+                <div class="pagination-info">
+                    Mostrando 1-5 de 1,258 clientes
+                </div>
+                <div class="pagination-controls">
+                    <div class="pagination-btn"><i class="fas fa-chevron-left"></i></div>
+                    <div class="pagination-btn active">1</div>
+                    <div class="pagination-btn">2</div>
+                    <div class="pagination-btn">3</div>
+                    <div class="pagination-btn">4</div>
+                    <div class="pagination-btn"><i class="fas fa-chevron-right"></i></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Customer Detail Modal -->
+        <div class="modal" id="customerDetailModal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h3>Detalle del Cliente</h3>
+                    <button class="close-btn">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="customer-profile">
+                        <div class="profile-avatar">ML</div>
+                        <div class="profile-info">
+                            <h3>María López</h3>
+                            <p>#CLI-001</p>
+                            <p><span class="status status-active">Cliente Activo</span></p>
+                        </div>
+                    </div>
+
+                    <div class="modal-tabs">
+                        <div class="modal-tab active" data-tab="info">Información</div>
+                        <div class="modal-tab" data-tab="orders">Pedidos</div>
+                        <div class="modal-tab" data-tab="activity">Actividad</div>
+                    </div>
+
+                    <div id="info-tab">
+                        <div class="customer-detail-section">
+                            <h4>Información de Contacto</h4>
+                            <div class="detail-grid">
+                                <div class="detail-item">
+                                    <label>Email</label>
+                                    <p>maria.lopez@example.com</p>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Teléfono</label>
+                                    <p>+34 612 345 678</p>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Fecha de Registro</label>
+                                    <p>15/03/2022</p>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Último Acceso</label>
+                                    <p>12/05/2023 - 14:30</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="customer-detail-section">
+                            <h4>Dirección</h4>
+                            <div class="detail-item">
+                                <p>Calle Principal, 123<br>28001 Madrid, España</p>
+                            </div>
+                        </div>
+
+                        <div class="customer-detail-section">
+                            <h4>Estadísticas</h4>
+                            <div class="detail-grid">
+                                <div class="detail-item">
+                                    <label>Total de Pedidos</label>
+                                    <p>12</p>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Gasto Total</label>
+                                    <p>€1,245.99</p>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Pedido Promedio</label>
+                                    <p>€103.83</p>
+                                </div>
+                                <div class="detail-item">
+                                    <label>Último Pedido</label>
+                                    <p>#ORD-1256 (12/05/2023)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div id="orders-tab" style="display: none;">
+                        <div class="customer-detail-section">
+                            <h4>Historial de Pedidos</h4>
+                            <table class="orders-table">
+                                <thead>
+                                    <tr>
+                                        <th># Pedido</th>
+                                        <th>Fecha</th>
+                                        <th>Total</th>
+                                        <th>Estado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>#ORD-1256</td>
+                                        <td>12/05/2023</td>
+                                        <td>€145.99</td>
+                                        <td><span class="status status-active">Entregado</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD-1248</td>
+                                        <td>05/05/2023</td>
+                                        <td>€89.50</td>
+                                        <td><span class="status status-active">Entregado</span></td>
+                                    </tr>
+                                    <tr>
+                                        <td>#ORD-1231</td>
+                                        <td>28/04/2023</td>
+                                        <td>€210.00</td>
+                                        <td><span class="status status-active">Entregado</span></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="btn btn-secondary">Editar Cliente</button>
+                    <button class="btn btn-primary">Enviar Mensaje</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Modal functionality
+            const modal = document.getElementById('customerDetailModal');
+            const closeBtn = document.querySelector('.close-btn');
+            
+            // View customer buttons
+            document.querySelectorAll('.view-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const customerId = this.getAttribute('data-customer');
+                    modal.style.display = 'flex';
+                });
+            });
+            
+            // Close modal
+            function closeModal() {
+                modal.style.display = 'none';
+            }
+            
+            closeBtn.addEventListener('click', closeModal);
+            
+            // Close modal when clicking outside
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+            
+            // Modal tabs
+            const modalTabs = document.querySelectorAll('.modal-tab');
+            const modalTabContents = document.querySelectorAll('#info-tab, #orders-tab, #activity-tab');
+            
+            modalTabs.forEach(tab => {
+                tab.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Remove active class from all tabs
+                    modalTabs.forEach(t => t.classList.remove('active'));
+                    modalTabContents.forEach(content => content.style.display = 'none');
+                    
+                    // Add active class to clicked tab
+                    this.classList.add('active');
+                    
+                    // Show corresponding content
+                    document.getElementById(`${tabId}-tab`).style.display = 'block';
+                });
+            });
+            
+            // Edit buttons
+            document.querySelectorAll('.edit-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const customerId = this.getAttribute('data-customer');
+                    alert(`Editar cliente #CLI-${customerId}`);
+                });
+            });
+            
+            // Delete buttons
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const customerId = this.getAttribute('data-customer');
+                    if(confirm(`¿Estás seguro de que quieres eliminar al cliente #CLI-${customerId}?`)) {
+                        alert(`Cliente #CLI-${customerId} eliminado`);
+                    }
+                });
+            });
+            
+            // Filter functionality
+            document.querySelectorAll('.filter-select').forEach(select => {
+                select.addEventListener('change', function() {
+                    alert(`Filtrando por: ${this.value}`);
+                });
+            });
+        });
+    </script>
+</body>
+</html>
